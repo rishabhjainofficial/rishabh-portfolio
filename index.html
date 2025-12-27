@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Rishabh Jain - Full Stack Developer</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body>
+        <!-- Custom Cursor -->
+        <div class="custom-cursor"></div>
+        <div class="custom-cursor-dot"></div>
+
+        <!-- Three.js Canvas -->
+        <canvas id="bg-canvas"></canvas>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Navigation -->
+            <nav id="navbar">
+                <div class="nav-container">
+                    <div class="logo">&lt;RJ /&gt;</div>
+                    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                    </button>
+                    <div class="nav-links" id="nav-links">
+                        <a href="#home" class="nav-link">Home</a>
+                        <a href="#experience" class="nav-link">Experience</a>
+                        <a href="#projects" class="nav-link">Projects</a>
+                        <a href="#skills" class="nav-link">Skills</a>
+                        <a href="#contact" class="nav-link">Contact</a>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Hero Section -->
+            <section id="home" class="hero-section">
+                <div class="container">
+                    <div class="hero-content">
+                        <div class="hero-text">
+                            <div class="greeting">Hi, I'm</div>
+                            <h1 class="hero-title">Rishabh Jain</h1>
+                            <h2 class="hero-subtitle">Full Stack Developer</h2>
+                            <p class="hero-description">
+                                Full Stack Developer with 6+ years of experience in frontend and backend development,
+                                specializing in the MERN stack and PHP frameworks. Expert in building responsive UIs
+                                with React and scalable backends using Express.js and Laravel.
+                            </p>
+                            <div class="contact-info">
+                                <div class="contact-item">
+                                    <svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="2">
+                                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                        <circle cx="12" cy="10" r="3"></circle>
+                                    </svg>
+                                    <span>Salumbar, Rajasthan 313027</span>
+                                </div>
+                                <div class="contact-item">
+                                    <svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="2">
+                                        <path
+                                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                                        </path>
+                                    </svg>
+                                    <span>+91 7039874858</span>
+                                </div>
+                                <div class="contact-item">
+                                    <svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="2">
+                                        <path
+                                            d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                        </path>
+                                        <polyline points="22,6 12,13 2,6"></polyline>
+                                    </svg>
+                                    <span><a href="mailto:rishabhjain.tcet@gmail.com">rishabhjain.tcet@gmail.com</a></span>
+                                </div>
+                                <div class="contact-item">
+                                    <svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="2">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <line x1="2" y1="12" x2="22" y2="12"></line>
+                                        <path
+                                            d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                                        </path>
+                                    </svg>
+                                    <a href="https://www.linkedin.com/in/rishabh-jain-a88176167" target="_blank">
+                                        linkedin.com/in/rishabh-jain-a88176167
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="hero-buttons">
+                                <button class="btn btn-primary"
+                                    onclick="document.getElementById('projects').scrollIntoView({behavior: 'smooth'})">View
+                                    My Work</button>
+                                <button class="btn btn-secondary">
+                                    <a href="./RishabhJainResume.pdf" download="RishabhJainResume.pdf" target="_blank"
+                                        style="color: inherit; text-decoration: none;">Download CV</a>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="hero-image-container">
+                            <div class="profile-ring"></div>
+                            <img src="https://images.pexels.com/photos/1704488/pexels-photo-1704488.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                                alt="Rishabh Jain" class="hero-profile-image" id="profile-image">
+                            <!-- Fallback avatar if image not found -->
+                            <div class="hero-avatar-fallback" id="avatar-fallback">RJ</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Experience Section -->
+            <section id="experience" class="section experience-section">
+                <div class="container">
+                    <h2 class="section-title">
+                        <svg class="icon-large" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                        </svg>
+                        Professional Experience
+                    </h2>
+                    <div class="experience-list">
+                        <div class="experience-card">
+                            <div class="experience-header">
+                                <div>
+                                    <h3 class="experience-title">Full Stack Developer</h3>
+                                    <a href="https://www.intverse.io" style="text-decoration: none;" target="_blank">
+                                        <p class="experience-company">
+                                            Inverse IT Solutions Pvt. Ltd.
+                                        </p>
+                                    </a>
+                                </div>
+                                <div class="experience-meta">
+                                    <p class="experience-period">10/2024 to Current</p>
+                                    <p class="experience-location">Remote</p>
+                                </div>
+                            </div>
+                            <ul class="experience-points">
+                                <li>Researched emerging technologies and conducted proof of concept activities for
+                                    potential adoption.</li>
+                                <li>Spearheaded migration of legacy web/methods applications to a modern Node.js
+                                    architecture, improving scalability and maintainability.</li>
+                                <li>Assisted in troubleshooting production issues, providing timely resolutions for
+                                    users.</li>
+                            </ul>
+                        </div>
+
+                        <div class="experience-card">
+                            <div class="experience-header">
+                                <div>
+                                    <h3 class="experience-title">Full Stack Developer</h3>
+                                    <a href="https://webanixsolutions.com" style="text-decoration: none;"
+                                        target="_blank">
+                                        <p class="experience-company">
+                                            WEBaniX Solutions Pvt. Ltd.
+                                        </p>
+                                    </a>
+                                </div>
+                                <div class="experience-meta">
+                                    <p class="experience-period">11/2020 to 09/2024</p>
+                                    <p class="experience-location">Udaipur</p>
+                                </div>
+                            </div>
+                            <ul class="experience-points">
+                                <li>Developed and maintained full-stack web applications using MERN stack, delivering
+                                    scalable solutions.</li>
+                                <li>Created custom billing system, recovering approximately 80% of unpaid invoices to
+                                    enhance cash flow.</li>
+                                <li>Designed and implemented order tracking system, reducing cycle from 30-45 days to
+                                    under one week.</li>
+                                <li>Transitioned client operations from paper to paperless system, decreasing overhead
+                                    by 90%.</li>
+                                <li>Managed MySQL/MongoDB databases through schema design, indexing, and query
+                                    optimization.</li>
+                                <li>Integrated third-party APIs to enhance application functionality and improve user
+                                    experience.</li>
+                            </ul>
+                        </div>
+
+                        <div class="experience-card">
+                            <div class="experience-header">
+                                <div>
+                                    <h3 class="experience-title">Junior PHP Developer</h3>
+                                    <a href="https://8848digital.com" style="text-decoration: none;" target="_blank">
+                                        <p class="experience-company">
+                                            8848 Digital LLP
+                                        </p>
+                                    </a>
+                                </div>
+                                <div class="experience-meta">
+                                    <p class="experience-period">07/2019 to 04/2020</p>
+                                    <p class="experience-location">Mumbai</p>
+                                </div>
+                            </div>
+                            <ul class="experience-points">
+                                <li>Assisted in development and maintenance of dynamic websites using PHP and Laravel
+                                    .</li>
+                                <li>Collaborated with senior developers to integrate MySQL databases, optimizing queries
+                                    .</li>
+                                <li>Debugged and resolved issues in existing codebases, improving application
+                                    performance.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Projects Section -->
+            <section id="projects" class="section projects-section">
+                <div class="container">
+                    <h2 class="section-title">
+                        <svg class="icon-large" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <polyline points="16 18 22 12 16 6"></polyline>
+                            <polyline points="8 6 2 12 8 18"></polyline>
+                        </svg>
+                        Featured Projects
+                    </h2>
+                    <div class="projects-grid">
+                        <div class="project-card">
+                            <div class="project-header">
+                                <svg class="icon-medium" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2">
+                                    <polyline points="16 18 22 12 16 6"></polyline>
+                                    <polyline points="8 6 2 12 8 18"></polyline>
+                                </svg>
+                                <svg class="icon-external" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                    <polyline points="15 3 21 3 21 9"></polyline>
+                                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                                </svg>
+                            </div>
+                            <h3 class="project-title">E-commerce Platform</h3>
+                            <p class="project-description">Built Minfert, NM, India, 20 MCC, Price360, Vaibhav Stores,
+                                Makeup biography</p>
+                            <div class="project-tags">
+                                <span class="tag">React</span>
+                                <span class="tag">Node.js</span>
+                                <span class="tag">MongoDB</span>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <div class="project-header">
+                                <svg class="icon-medium" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2">
+                                    <polyline points="16 18 22 12 16 6"></polyline>
+                                    <polyline points="8 6 2 12 8 18"></polyline>
+                                </svg>
+                                <svg class="icon-external" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                    <polyline points="15 3 21 3 21 9"></polyline>
+                                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                                </svg>
+                            </div>
+                            <h3 class="project-title">CRM/ERP Solutions</h3>
+                            <p class="project-description">Developed 20M Konnect, Abhi Construction, WebPM, UCCI</p>
+                            <div class="project-tags">
+                                <span class="tag">MERN Stack</span>
+                                <span class="tag">MySQL</span>
+                                <span class="tag">REST API</span>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <div class="project-header">
+                                <svg class="icon-medium" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2">
+                                    <polyline points="16 18 22 12 16 6"></polyline>
+                                    <polyline points="8 6 2 12 8 18"></polyline>
+                                </svg>
+                                <svg class="icon-external" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                    <polyline points="15 3 21 3 21 9"></polyline>
+                                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                                </svg>
+                            </div>
+                            <h3 class="project-title">Web Portals</h3>
+                            <p class="project-description">Created Dharohar, Bharat Aatma, Third.space, Five5 Digital,
+                                Webank Solutions, Eragon</p>
+                            <div class="project-tags">
+                                <span class="tag">Laravel</span>
+                                <span class="tag">PHP</span>
+                                <span class="tag">JavaScript</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Skills Section -->
+            <section id="skills" class="section skills-section">
+                <div class="container">
+                    <h2 class="section-title">
+                        <svg class="icon-large" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                            <line x1="16" y1="13" x2="8" y2="13"></line>
+                            <line x1="16" y1="17" x2="8" y2="17"></line>
+                            <polyline points="10 9 9 9 8 9"></polyline>
+                        </svg>
+                        Technical Skills
+                    </h2>
+                    <div class="skills-grid">
+                        <div class="skill-card">
+                            <h3 class="skill-category">Languages</h3>
+                            <div class="skill-tags">
+                                <span class="skill-tag">HTML</span>
+                                <span class="skill-tag">CSS</span>
+                                <span class="skill-tag">JavaScript</span>
+                                <span class="skill-tag">TypeScript</span>
+                                <span class="skill-tag">PHP</span>
+                                <span class="skill-tag">Python</span>
+                            </div>
+                        </div>
+
+                        <div class="skill-card">
+                            <h3 class="skill-category">Frameworks</h3>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Express.js</span>
+                                <span class="skill-tag">Next.js</span>
+                                <span class="skill-tag">Laravel</span>
+                                <span class="skill-tag">React Native</span>
+                                <span class="skill-tag">CodeIgniter</span>
+                                <span class="skill-tag">WordPress</span>
+                            </div>
+                        </div>
+
+                        <div class="skill-card">
+                            <h3 class="skill-category">Databases</h3>
+                            <div class="skill-tags">
+                                <span class="skill-tag">MySQL</span>
+                                <span class="skill-tag">Oracle</span>
+                                <span class="skill-tag">PostgreSQL</span>
+                                <span class="skill-tag">MongoDB</span>
+                            </div>
+                        </div>
+
+                        <div class="skill-card">
+                            <h3 class="skill-category">CSS Frameworks</h3>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Bootstrap</span>
+                                <span class="skill-tag">Tailwind</span>
+                            </div>
+                        </div>
+
+                        <div class="skill-card skill-card-wide">
+                            <h3 class="skill-category">Tools & Technologies</h3>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Kafka</span>
+                                <span class="skill-tag">ArcGCD</span>
+                                <span class="skill-tag">Nexus</span>
+                                <span class="skill-tag">Airflow</span>
+                                <span class="skill-tag">FileZilla</span>
+                                <span class="skill-tag">MongoDB Atlas</span>
+                                <span class="skill-tag">XAMPP</span>
+                                <span class="skill-tag">Bitbucket</span>
+                                <span class="skill-tag">GitHub</span>
+                                <span class="skill-tag">GitLab</span>
+                                <span class="skill-tag">Jira</span>
+                                <span class="skill-tag">Trello</span>
+                                <span class="skill-tag">Zoho</span>
+                                <span class="skill-tag">Docker</span>
+                            </div>
+                        </div>
+
+                        <div class="skill-card">
+                            <h3 class="skill-category">Testing</h3>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Jest</span>
+                                <span class="skill-tag">Pest</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="education-card">
+                        <h3 class="skill-category">Education</h3>
+                        <div class="education-content">
+                            <div>
+                                <p class="education-degree">Bachelor's of Engineering, Information Technology</p>
+                                <p class="education-university">MUMBAI UNIVERSITY</p>
+                            </div>
+                            <div class="education-meta">
+                                <p class="education-date">06/2019</p>
+                                <p class="education-location">Mumbai</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact" class="section contact-section">
+                <div class="container">
+                    <h2 class="contact-title">Let's Build Something Together</h2>
+                    <p class="contact-description">
+                        I'm always open to discussing new projects, creative ideas, or opportunities to be part of your
+                        vision.
+                    </p>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/rishabh-jain-a8176107" target="_blank" class="social-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                                </path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                        </a>
+                        <a href="mailto:rishabhijain.veca@gmail.com" class="social-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                </path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </a>
+                    </div>
+                    <a href="mailto:rishabhjain.tcet@gmail.com" class="btn btn-primary">Get In Touch</a>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer class="footer">
+                <div class="container">
+                    <p class="footer-text">© 2025 Rishabh Jain. Built with HTML, CSS, JavaScript & Three.js</p>
+                </div>
+            </footer>
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+        <script src="script.js"></script>
+    </body>
+
+</html>
