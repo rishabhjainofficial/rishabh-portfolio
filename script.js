@@ -57,19 +57,48 @@ navLinks.forEach(link => {
     });
 });
 
-const hamburger = document.getElementById('hamburger');
-hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navLinks.classList.toggle('active');
-});
+// Mobile Navigation - Hamburger Menu
+document.addEventListener('DOMContentLoaded', function () {
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+    const navLinkItems = document.querySelectorAll('.nav-link');
 
-document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-        hamburger.classList.remove('active');
-        navLinks.classList.remove('active');
+    // Toggle menu on hamburger click
+    hamburger.addEventListener('click', function (e) {
+        e.stopPropagation();
+
+        hamburger.classList.toggle('active');
+        navLinks.classList.toggle('active');
+
+        // Prevent body scroll when menu is open
+        if (navLinks.classList.contains('active')) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'auto';
+        }
+    });
+
+    // Close menu when clicking a link
+    navLinkItems.forEach(function (link) {
+        link.addEventListener('click', function () {
+            hamburger.classList.remove('active');
+            navLinks.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', function (e) {
+        const isClickInsideMenu = navLinks.contains(e.target);
+        const isClickOnHamburger = hamburger.contains(e.target);
+
+        if (!isClickInsideMenu && !isClickOnHamburger && navLinks.classList.contains('active')) {
+            hamburger.classList.remove('active');
+            navLinks.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
     });
 });
-
 
 // Three.js Background Animation
 const canvas = document.getElementById('bg-canvas');
