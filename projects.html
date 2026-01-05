@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Projects</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body>
+        <div class="container" style="padding-top:4rem;padding-bottom:4rem;">
+            <a href="index.html" class="btn btn-secondary" style="margin-bottom:1rem; display:inline-block;">← Back</a>
+            <h1 id="page-title" style="margin:0.5rem 0 1.25rem;color:#f1f5f9;">Projects</h1>
+            <div id="projects-root" class="project-list"></div>
+        </div>
+
+        <script>
+            (function () {
+                const projectsByType = {
+                    ecommerce: [
+                        { title: 'Minfert', desc: 'Multiple e-commerce stores and marketplaces.', link: '#' },
+                        { title: 'Price360', desc: 'Pricing engine and storefront integrations.', link: '#' }
+                    ],
+                    enterprise: [
+                        { title: '20M Konnect', desc: 'CRM/ERP implementations for operations.', link: '#' },
+                        { title: 'Abhi Construction', desc: 'Custom ERP for construction management.', link: '#' }
+                    ],
+                    web: [
+                        { title: 'Dharohar', desc: 'Web portal for cultural initiatives.', link: '#' },
+                        { title: 'Third.space', desc: 'Corporate web portal and CMS-backed site.', link: '#' }
+                    ]
+                };
+
+                function q(name) {
+                    return new URLSearchParams(window.location.search).get(name);
+                }
+
+                const type = q('type') || 'web';
+                const title = (type.charAt(0).toUpperCase() + type.slice(1)) + ' Projects';
+                document.getElementById('page-title').textContent = title;
+
+                const root = document.getElementById('projects-root');
+                const list = projectsByType[type] || [];
+                if (list.length === 0) {
+                    root.innerHTML = '<p class="empty">No projects available for this category.</p>';
+                } else {
+                    root.innerHTML = '';
+                    list.forEach(p => {
+                        const item = document.createElement('div');
+                        item.className = 'modal-project-item';
+                        item.innerHTML = `<h3 class="modal-project-title">${p.title}</h3><p class="modal-project-desc">${p.desc}</p>${p.link ? `<a class="modal-project-link" href="${p.link}" target="_blank" rel="noopener">Open</a>` : ''}`;
+                        root.appendChild(item);
+                    });
+                }
+            })();
+        </script>
+    </body>
+
+</html>
